@@ -7,11 +7,13 @@ const favoriteSchema = new Schema({
         ref: 'User',
         require: true
     },
-    dishes: {
-        type: [mongoose.SchemaTypes.ObjectId],
-        ref: 'Dish',
-        require: true
-    }
+    dishes: 
+        [{   
+            type: mongoose.SchemaTypes.ObjectId, 
+            ref: 'Dish', 
+            require: true, 
+            unique: true 
+        }],
 },{
     timestamps: true
 })
